@@ -1,0 +1,29 @@
+name: "Frogbot Security Scan"
+on:
+  workflow_dispatch:
+  pull_request_target: 
+    types: [ opened, synchronize ]
+  push:
+    branches: [ "develop" ]
+permissions:
+  contents: write
+  pull-requests: write
+  security-events: write
+  id-token: write
+jobs:
+  frogbot-scan:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        branch: [ "develop" ]
+    steps:
+      - uses: jfrog/frogbot@110dbb5b57b91b956ed2506570d258d1ce29f049 # v2.29.1
+        with:
+          oidc-provider-name: setup-frog-cli
+        env:
+          JF_URL: https://jfrog.oceaneering.com/
+          JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JF_GIT_BASE_BRANCH: ${{ matrix.branch }}
+          JF_DEPS_REPO: "npmjs-remote"
+          JFROG_CLI_LOG_LEVEL: DEBUG
+          JF_WORKING_DIR: Server
