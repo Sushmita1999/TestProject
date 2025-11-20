@@ -14,7 +14,7 @@
     "jsonwebtoken": "^9.0.2",
     "mqtt": "^5.0.4",
     "nodemailer": "^6.9.12",
-    "on-headers": "^1.0.2",
+    "on-headers": "^1.1.0",
     "pidusage": "^3.0.2",
     "sqlite3": "5.1.6",
     "ws": "^8.13.0"
@@ -65,5 +65,20 @@
     "suiteNameTemplate": "{filepath}",
     "classNameTemplate": "{classname}",
     "titleTemplate": "{title}"
-  }
+  },
+  "bundleDependencies": [
+    "config",
+    "express",
+    "express-rate-limit",
+    "https",
+    "i18next",
+    "i18next-resources-to-backend",
+    "jsonwebtoken",
+    "mqtt",
+    "nodemailer",
+    "on-headers",
+    "pidusage",
+    "sqlite3",
+    "ws"
+  ]
 }
