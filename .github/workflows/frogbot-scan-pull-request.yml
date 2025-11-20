@@ -38,3 +38,4 @@ jobs:
 
           JF_GIT_TOKEN: ${{ secrets.JF_GIT_TOKEN }}
           JF_INCLUDE_ALL_VULNERABILITIES: "TRUE"
+          JF_WORKING_DIR: Server
