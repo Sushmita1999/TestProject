@@ -14,7 +14,7 @@
     "jsonwebtoken": "^9.0.2",
     "mqtt": "^5.0.4",
     "nodemailer": "^7.0.7",
-    "on-headers": "^1.0.2",
+    "on-headers": "^1.1.0",
     "pidusage": "^3.0.2",
     "sqlite3": "5.1.6",
     "ws": "^8.13.0"
